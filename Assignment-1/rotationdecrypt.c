@@ -1,26 +1,26 @@
 /*
  ============================================================================
- Name        : ENGG1003_Assessment 1_Rotation Decryption.c
+ Name        : ENGG1003_Assessment 1_Rotation Decription.c
  Author      : David Procter
- Version     : 002
+ Version     : 003
  Copyright   : Copyright - David Procter
- Description : Rotation Decryption
+ Description : Rotation Decription
  ============================================================================
  */
 
 #include <stdio.h>
 #include <stdlib.h>
 
-int rotationDecrypt (void);
+int rotationDecript (void);
 
 
-int rotationDecrypt (void)
+int rotationDecript (void)
 {
 	int b=0;
 	int c=0;
 	int key=10;
 
-	puts("ENGG1003_Assessment 1_Rotation Decryption"); /* prints ENGG1003_Assessment 1_Rotation Encryption */
+	puts("ENGG1003_Assessment 1_Rotation Decription"); /* prints ENGG1003_Assessment 1_Rotation Encription */
 
 	char textstring [1024] = "KJ WI PSBCD DOCD CDBSXQ" ;
 

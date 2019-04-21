@@ -1,10 +1,10 @@
 /*
  ============================================================================
- Name        : ENGG1003_Assessment 1_Substitution Decryption.c
+ Name        : ENGG1003_Assessment 1_Substitution Decription.c
  Author      : David Procter
  Version     : 004
  Copyright   : Copyright - David Procter
- Description : Substitution Decryption
+ Description : Substitution Decription
  ============================================================================
  */
 
@@ -18,14 +18,14 @@ int substitutionDecript (void)
 {
 	int b=0, c=0;
 
-	puts("ENGG1003_Assessment 1_Substitution Decryption"); /* prints ENGG1003_Assessment 1_Rotation Encryption */
+	puts("ENGG1003_Assessment 1_Substitution Decription"); /* prints ENGG1003_Assessment 1_Rotation Encription */
 
 	char textstring [1024] = "LQ VW FAOIU UGIU IUOACD AI GLIW UX GCJOAZU CXR A CGGH UX HGJOAZU USG IUOACD" ;
 	char keystring [1024] = "LKJHGFDSAMNBVCXZPOIUYTREWQ" ;
 
-	printf("%s\n", textstring);  //Print the tesxt string.
+	printf("%s\n", textstring);  //Print the text string.
 
-	for (int a=0 ; textstring[a] != '\0' ; a++ ) // Run a loop and decrypt the string.
+	for (int a=0 ; textstring[a] != '\0' ; a++ ) // Run a loop and decript the string.
 	{
 		b = textstring[a];
 		c=0;
@@ -41,7 +41,7 @@ int substitutionDecript (void)
 			}
 		}
 	}
-	printf("%s\n", textstring); //Print the decrypted result.
+	printf("%s\n", textstring); //Print the decripted result.
 
 	return 0;
 }

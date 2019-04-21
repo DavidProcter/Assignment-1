@@ -1,10 +1,10 @@
 /*
  ============================================================================
- Name        : ENGG1003_Assessment 1_Substitution Encryption.c
+ Name        : ENGG1003_Assessment 1_Substitution Encription.c
  Author      : David Procter
  Version     : 004
  Copyright   : Copyright - David Procter
- Description : Substitution Encryption
+ Description : Substitution Encription
  ============================================================================
  */
 
@@ -18,7 +18,7 @@ int substitutionEncript (void)
 {
 	int b=0;
 
-	puts("ENGG1003_Assessment 1_Sudstitution Encryption"); /* prints ENGG1003_Assessment 1_Rotation Encryption */
+	puts("ENGG1003_Assessment 1_Sudstitution Encription"); /* prints ENGG1003_Assessment 1_Rotation Encription */
 
 	char textstring [1024] = "AZ MY FIRST TEST STRING IS EASY TO ENCRIPT NOW I NEED TO DECRIPT THE STRING" ;
 	char keystring [1024] = "LKJHGFDSAMNBVCXZPOIUYTREWQ" ;
