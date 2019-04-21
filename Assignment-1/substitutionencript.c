@@ -21,7 +21,7 @@ int substitutionEncript (void)
 	puts("ENGG1003_Assessment 1_Sudstitution Encryption"); /* prints ENGG1003_Assessment 1_Rotation Encryption */
 
 	char textstring [1024] = "AZ MY FIRST TEST STRING IS EASY TO ENCRIPT NOW I NEED TO DECRIPT THE STRING" ;
-	char keystring [1024] = "QWERTYUIOPASDFGHJKLZXCVBNM" ;
+	char keystring [1024] = "LKJHGFDSAMNBVCXZPOIUYTREWQ" ;
 
 	printf("%s\n", textstring);  //Print the tesxt string.
 

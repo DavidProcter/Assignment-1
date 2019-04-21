@@ -18,11 +18,11 @@ int rotationDecrypt (void)
 {
 	int b=0;
 	int c=0;
-	int key=20;
+	int key=10;
 
 	puts("ENGG1003_Assessment 1_Rotation Decryption"); /* prints ENGG1003_Assessment 1_Rotation Encryption */
 
-	char textstring [1024] = "UT GS ZCLMN NYMN MNLCHA" ;
+	char textstring [1024] = "KJ WI PSBCD DOCD CDBSXQ" ;
 
 	printf("%s\n", textstring);  //Print the text string.
 

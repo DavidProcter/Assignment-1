@@ -24,9 +24,11 @@ int main(void) {
 
 int rotationEncript (void)
 {
-	int b=0, c=0, key=20;
+	int b=0, c=0, key=10;
 
 	char textstring [1024] = "AZ MY FIRST TEST STRING" ;
+
+
 
 	printf("%s\n", textstring);  //Print the text string.
 

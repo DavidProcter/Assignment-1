@@ -20,8 +20,8 @@ int substitutionDecript (void)
 
 	puts("ENGG1003_Assessment 1_Substitution Decryption"); /* prints ENGG1003_Assessment 1_Rotation Encryption */
 
-	char textstring [1024] = "QM DN YOKLZ ZTLZ LZKOFU OL TQLN ZG TFEKOHZ FGV O FTTR ZG RTEKOHZ ZIT LZKOFU" ;
-	char keystring [1024] = "QWERTYUIOPASDFGHJKLZXCVBNM" ;
+	char textstring [1024] = "LQ VW FAOIU UGIU IUOACD AI GLIW UX GCJOAZU CXR A CGGH UX HGJOAZU USG IUOACD" ;
+	char keystring [1024] = "LKJHGFDSAMNBVCXZPOIUYTREWQ" ;
 
 	printf("%s\n", textstring);  //Print the tesxt string.
 
