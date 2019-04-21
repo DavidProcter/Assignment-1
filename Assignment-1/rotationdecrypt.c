@@ -11,9 +11,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int rotationDecript (void);
-
-
 int rotationDecript (void)
 {
 	int b=0;

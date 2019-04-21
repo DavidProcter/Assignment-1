@@ -11,9 +11,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int substitutionEncript (void);
-
-
 int substitutionEncript (void)
 {
 	int b=0;

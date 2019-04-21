@@ -8,24 +8,41 @@
  ============================================================================
  */
 
+#include <stdio.h>
+#include <stdlib.h>
+
+int rotationEncript (void);
+int rotationDecript (void);
+int substitutionEncript (void);
+int substitutionDecript (void);
+
 int main(void) {
 
 	int a=0;
 
-	if (a==0) {
-	rotationEncript ();
-	a++;
+
+	if (a==0)
+	{
+		printf("Description : Cipher System - Option: %d\n", a);
+		rotationEncript ();
+		a++;
 	}
-	if (a==1) {
-	rotationDecript ();
-	a++;
+	if (a==1)
+	{
+		printf("Description : Cipher System - Option: %d\n", a);
+		rotationDecript ();
+		a++;
 	}
-	if (a==2) {
-	substitutionEncript ();
-	a++;
+	if (a==2)
+	{
+		printf("Description : Cipher System - Option: %d\n", a);
+		substitutionEncript ();
+		a++;
 	}
-	if (a==3) {
-	substitutionDecript ();
+	if (a==3)
+	{
+		printf("Description : Cipher System - Option: %d\n", a);
+		substitutionDecript ();
 	}
 	return 0;
 

@@ -11,9 +11,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int substitutionDecript (void);
-
-
 int substitutionDecript (void)
 {
 	int b=0, c=0;

@@ -11,9 +11,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int rotationEncript (void);
-
-
 int rotationEncript (void)
 {
 	int b=0, c=0, key=10;
