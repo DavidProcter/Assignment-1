@@ -16,15 +16,17 @@ int rotationEncript (void);
 int main(void) {
 	puts("ENGG1003_Assessment 1_Rotation Encryption"); /* prints ENGG1003_Assessment 1_Rotation Encryption */
 	rotationEncript ();
+	rotationDecrypt ();
+	substitutionEncript ();
+	substitutionDecript ();
 	return EXIT_SUCCESS;
 }
 
 int rotationEncript (void)
 {
+	int b=0, c=0, key=20;
 
 	char textstring [1024] = "AZ MY FIRST TEST STRING" ;
-
-	int b=0, c=0, key=20;
 
 	printf("%s\n", textstring);  //Print the text string.
 

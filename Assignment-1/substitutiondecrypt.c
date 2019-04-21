@@ -1,0 +1,47 @@
+/*
+ ============================================================================
+ Name        : ENGG1003_Assessment 1_Substitution Decryption.c
+ Author      : David Procter
+ Version     : 004
+ Copyright   : Copyright - David Procter
+ Description : Substitution Decryption
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int substitutionDecript (void);
+
+
+int substitutionDecript (void)
+{
+	int b=0, c=0;
+
+	puts("ENGG1003_Assessment 1_Substitution Decryption"); /* prints ENGG1003_Assessment 1_Rotation Encryption */
+
+	char textstring [1024] = "QM DN YOKLZ ZTLZ LZKOFU OL TQLN ZG TFEKOHZ FGV O FTTR ZG RTEKOHZ ZIT LZKOFU" ;
+	char keystring [1024] = "QWERTYUIOPASDFGHJKLZXCVBNM" ;
+
+	printf("%s\n", textstring);  //Print the tesxt string.
+
+	for (int a=0 ; textstring[a] != '\0' ; a++ ) // Run a loop and decrypt the string.
+	{
+		b = textstring[a];
+		c=0;
+		if (b >= 65 && b <= 90) //Only decript the capital letters.
+		{
+			for (int d=0 ; b!=c ; d++) // Find the matching index to number
+			{
+				c=keystring[d];
+				if (b==c)
+				{
+					textstring[a]=d+65; //After finding the matching number, add 65 to make it a capital letter.
+				}
+			}
+		}
+	}
+	printf("%s\n", textstring); //Print the decrypted result.
+
+	return 0;
+}
