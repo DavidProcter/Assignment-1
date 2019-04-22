@@ -11,10 +11,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int rotationEncript (void);
-int rotationDecript (void);
-int substitutionEncript (void);
-int substitutionDecript (void);
+int rotationEncrypt (void);
+int rotationDecrypt (void);
+int substitutionEncrypt (void);
+int substitutionDecrypt (void);
 
 int main(void) {
 
@@ -24,25 +24,25 @@ int main(void) {
 	if (a==0)
 	{
 		printf("Description : Cipher System - Option: %d\n", a);
-		rotationEncript ();
+		rotationEncrypt ();
 		a++;
 	}
 	if (a==1)
 	{
-		printf("Description : Cipher System - Option: %d\n", a);
-		rotationDecript ();
+		printf("Descryption : Cipher System - Option: %d\n", a);
+		rotationDecrypt ();
 		a++;
 	}
 	if (a==2)
 	{
-		printf("Description : Cipher System - Option: %d\n", a);
-		substitutionEncript ();
+		printf("Descryption : Cipher System - Option: %d\n", a);
+		substitutionEncrypt ();
 		a++;
 	}
 	if (a==3)
 	{
-		printf("Description : Cipher System - Option: %d\n", a);
-		substitutionDecript ();
+		printf("Descryption : Cipher System - Option: %d\n", a);
+		substitutionDecrypt ();
 	}
 	return 0;
 

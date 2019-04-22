@@ -1,23 +1,23 @@
 /*
  ============================================================================
- Name        : ENGG1003_Assessment 1_Rotation Encription.c
+ Name        : ENGG1003_Assessment 1_Rotation Encryption.c
  Author      : David Procter
  Version     : 106
  Copyright   : Copyright - David Procter
- Description : Rotation Encription
+ Description : Rotation Encryption
  ============================================================================
  */
 
 #include <stdio.h>
 #include <stdlib.h>
 
-int rotationEncript (void)
+int rotationEncrypt (void)
 {
 	int b=0, c=0, key=10;
 
 	char textstring [1024] = "AZ MY FIRST TEST STRING" ;
 
-	puts("ENGG1003_Assessment 1_Rotation Encription"); /* prints ENGG1003_Assessment 1_Rotation Encription */
+	puts("ENGG1003_Assessment 1_Rotation Encryption"); /* prints ENGG1003_Assessment 1_Rotation Encryption */
 
 	printf("%s\n", textstring);  //Print the text string.
 
@@ -35,7 +35,7 @@ int rotationEncript (void)
 			textstring[a]=c; // Change the value of the letter
 		}
 	}
-	printf("%s\n", textstring); //Print the encripted result
+	printf("%s\n", textstring); //Print the encrypted result
 
 	return 0;
 }

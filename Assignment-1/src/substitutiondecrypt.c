@@ -1,32 +1,32 @@
 /*
  ============================================================================
- Name        : ENGG1003_Assessment 1_Substitution Decription.c
+ Name        : ENGG1003_Assessment 1_Substitution Decryption.c
  Author      : David Procter
  Version     : 004
  Copyright   : Copyright - David Procter
- Description : Substitution Decription
+ Description : Substitution Decryption
  ============================================================================
  */
 
 #include <stdio.h>
 #include <stdlib.h>
 
-int substitutionDecript (void)
+int substitutionDecrypt (void)
 {
 	int b=0, c=0;
 
-	puts("ENGG1003_Assessment 1_Substitution Decription"); /* prints ENGG1003_Assessment 1_Rotation Encription */
+	puts("ENGG1003_Assessment 1_Substitution Decryption"); /* prints ENGG1003_Assessment 1_Rotation Encryption */
 
 	char textstring [1024] = "LQ VW FAOIU UGIU IUOACD AI GLIW UX GCJOAZU CXR A CGGH UX HGJOAZU USG IUOACD" ;
 	char keystring [1024] = "LKJHGFDSAMNBVCXZPOIUYTREWQ" ;
 
 	printf("%s\n", textstring);  //Print the text string.
 
-	for (int a=0 ; textstring[a] != '\0' ; a++ ) // Run a loop and decript the string.
+	for (int a=0 ; textstring[a] != '\0' ; a++ ) // Run a loop and decrypt the string.
 	{
 		b = textstring[a];
 		c=0;
-		if (b >= 65 && b <= 90) //Only decript the capital letters.
+		if (b >= 65 && b <= 90) //Only decrypt the capital letters.
 		{
 			for (int d=0 ; b!=c ; d++) // Find the matching index to number
 			{
@@ -38,7 +38,7 @@ int substitutionDecript (void)
 			}
 		}
 	}
-	printf("%s\n", textstring); //Print the decripted result.
+	printf("%s\n", textstring); //Print the decrypted result.
 
 	return 0;
 }
