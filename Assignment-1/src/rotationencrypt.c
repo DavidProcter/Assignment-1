@@ -4,7 +4,7 @@
  Author      : David Procter
  Version     : 106
  Copyright   : Copyright - David Procter
- Description : Rotation Encryption
+ Description : Rotation Encryption Function
  ============================================================================
  */
 

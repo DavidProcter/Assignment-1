@@ -4,7 +4,7 @@
  Author      : David Procter
  Version     : 003
  Copyright   : Copyright - David Procter
- Description : Rotation Decryption
+ Description : Rotation Decryption Function
  ============================================================================
  */
 

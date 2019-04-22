@@ -4,7 +4,7 @@
  Author      : David Procter
  Version     : 004
  Copyright   : Copyright - David Procter
- Description : Substitution Decryption
+ Description : Substitution Decryption Function
  ============================================================================
  */
 
