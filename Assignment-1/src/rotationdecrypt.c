@@ -37,7 +37,7 @@ int rotationDecrypt (void)
 			textstring[a]=c; // Change the value of the letter
 		}
 	}
-	printf("%s\n", textstring); //Print the encrypted result
+	printf("%s\n", textstring); //Print the decrypted result
 
 	return 0;
 }
