@@ -23,6 +23,7 @@ int main(void) {
 	FILE *sub_input_file;	//File pointer declaration
 
 	int a=0, b=0, c=0;		//Declare variables used in the menus
+	int d=0;
 	int key_input;			//Variable for collecting the rotation key value (manual input)
 	int key=0;				//Variable for the value of the rotation encryption key (file value)
 
@@ -42,7 +43,7 @@ int main(void) {
 	menu:														//Tag for the goto function, turn around and do it again
 	printf("\nTitle  : Cipher Encryption and Decryption\n");	//Title screen
 	printf("Class  : ENGG1003 2019_S1\n");						//Me
-	printf("Author : David Procter, C3333199\n");
+	printf("Author : David Procter, C3333199\n\n");
 
 	printf("Please select from the following Menu\n");						//Menu instruction
 	printf("1 for Rotation Cipher\n2 for Substitution Cipher\n9 for EXIT\n\n");	//Menu choices
@@ -60,14 +61,14 @@ int main(void) {
 			goto sub_menu;				//Go to the substitution menu
 			break;
 		case 9:
-			printf("EXIT");				//Exit when selected
+			//printf("EXIT");				//Exit when selected
 			break;
 		default:						//Incorrect selection asks again
 			system("cls");
 			printf("\nPlease enter a value of 1,2 or 9\n\n");
 			goto menu;
 	}
-	printf("EXIT from the main menu level");	//Text line to identify exit point when testing
+	printf("EXIT from the main menu level\n");	//Text line to identify exit point when testing
 	return 0;
 
 	/*
@@ -85,7 +86,7 @@ int main(void) {
 
 	switch (b){							//Switch case for menu selection
 		case 1:
-			printf("Manual Input\n");
+			printf("\nManual Input\n");
 			goto rot_manual;				//Go to manual input for text string and key
 			break;
 		case 2:
@@ -119,16 +120,17 @@ int main(void) {
 	}
 	strupr(textinput);		//Make sure the text that was input is in upper case
 
-	printf("Text is: %s\n", textinput);		//Read back of entries for text string and key
-	printf("Number is: %d\n\n", key_input);
+	printf("\nText entered is: %s\n", textinput);		//Read back of entries for text string and key
+	printf("Key number entered is: %d\n\n", key_input);
 
-	rot_input_file = fopen("rotation_text_input.txt", "w");	//Open the file in write mode
+	rot_input_file = fopen("rotation_text.txt", "w");	//Open the file in write mode
 	fputs(textinput, rot_input_file);						//Write the text string to file
 	fputs("\n", rot_input_file);							//Add a new line character
 	fprintf(rot_input_file, "%d", key_input);				//Write the manual input key value to the file
 	fclose(rot_input_file);									//Close the file
 
-	rot_start: rot_input_file = fopen("rotation_text_input.txt", "r");	//Open the file in read mode
+	rot_start:
+	rot_input_file = fopen("rotation_text.txt", "r");	//Open the file in read mode
 	fgets(textstring, 1024,(FILE*)rot_input_file);			//Read the text string from file
 	fscanf(rot_input_file, "%d", &key);						//Read the key from file
 	fclose(rot_input_file);									//Close the file
@@ -141,10 +143,38 @@ int main(void) {
 
 	strupr(textstring);
 
-	printf("File text: %s\n", textstring);		//Print what was read from the file
-	printf("File key: %d\n", key);
+	printf("\nText for cipher: %s", textstring);		//Print what was read from the file
+	printf("Key for cipher: %d\n\n", key);
 
-	puts("ENGG1003_Assessment 1_Menu - Rotation End"); /* prints ENGG1003_Assessment 1_Menu */
+		rot_go_choice:
+		printf("Please select from the choice\n");	//List the choices
+		printf("1 to Encript\n2 to Decrypt\n9 to return to Main Menu\n\n");
+		printf("Please enter selection: ");			//Ask for selection
+		scanf("%d", &d);							//Store the selection
+
+		switch (d){							//Switch case for menu selection
+			case 1:
+				printf("Rotation Encryption\n");
+				rotationEncrypt ();
+				goto rot_go_choice;
+				break;
+			case 2:
+				printf("Rotation Decryption\n");
+				rotationDecrypt ();
+				goto rot_go_choice;
+				break;
+			case 9:
+				printf("EXIT (Main Menu)");
+				system("cls");					//Return back to the main menu
+				goto menu;
+				break;
+			default:
+				//system("cls");
+				printf("\nPlease enter a value of 1,2 or 9\n\n");
+				goto rot_go_choice;					//Go back and ask for a valid selection
+		}
+
+	puts("\nENGG1003_Assessment 1_Menu - Rotation Cipher End"); //Should not se this
 
 	return 0;
 

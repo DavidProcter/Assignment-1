@@ -13,13 +13,29 @@
 
 int rotationEncrypt (void)
 {
+	FILE *rot_input_file;	//File pointer declaration
+	FILE *rot_output_file;	//File pointer declaration
+
 	int b=0, c=0, key=10;
 
-	char textstring [1024] = "AZ MY FIRST TEST STRING" ;
+	char textstring [1024];// = "AZ MY FIRST TEST STRING" ;
 
-	puts("ENGG1003_Assessment 1_Rotation Encryption"); /* prints ENGG1003_Assessment 1_Rotation Encryption */
+	//puts("ENGG1003_Assessment 1_Rotation Encryption"); /* prints ENGG1003_Assessment 1_Rotation Encryption */
 
-	printf("%s\n", textstring);  //Print the text string.
+	rot_input_file = fopen("rotation_text.txt", "r");	//Open the file in read mode
+		fgets(textstring, 1024,(FILE*)rot_input_file);			//Read the text string from file
+		fscanf(rot_input_file, "%d", &key);						//Read the key from file
+		fclose(rot_input_file);									//Close the file
+
+		if (key <0 || key >26) {					//Check the input key is valid number range
+			//system("cls");
+			printf("\nKey value was invalid\n");	//Print to screen error message
+			return 0;							//Turn around and do it again, back to the rotation menu
+		}
+
+
+	printf("Text to encrypt: %s", textstring);  //Print the text string.
+	printf("Encryption key: %d\n", key);  //Print the text string.
 
 	for (int a=0 ; textstring[a] != '\0' ; a++ ) // Run a loop and encrypt the string.
 	{
@@ -35,7 +51,22 @@ int rotationEncrypt (void)
 			textstring[a]=c; // Change the value of the letter
 		}
 	}
-	printf("%s\n", textstring); //Print the encrypted result
+
+	rot_output_file = fopen("rotation_text.txt", "w");	//Open the file in write mode
+	fputs(textstring, rot_output_file);						//Write the text string to file
+	fputs("\n", rot_output_file);							//Add a new line character
+	fprintf(rot_output_file, "%d", key);						//Write the manual output key value to the file
+	fclose(rot_output_file);									//Close the file
+
+	/*
+	rot_start:
+	rot_input_file = fopen("rotation_text_input.txt", "r");	//Open the file in read mode
+	fgets(textstring, 1024,(FILE*)rot_input_file);			//Read the text string from file
+	fscanf(rot_input_file, "%d", &key);						//Read the key from file
+	fclose(rot_input_file);									//Close the file
+	*/
+
+	printf("\nEncrypted text: %s\n", textstring); //Print the encrypted result
 
 	return 0;
 }

@@ -2,7 +2,7 @@
  ============================================================================
  Name        : ENGG1003_Assessment 1_Rotation Decryption.c
  Author      : David Procter
- Version     : 003
+ Version     : 004
  Copyright   : Copyright - David Procter
  Description : Rotation Decryption Function
  ============================================================================
@@ -13,15 +13,31 @@
 
 int rotationDecrypt (void)
 {
+	FILE *rot_input_file;	//File pointer declaration
+	FILE *rot_output_file;	//File pointer declaration
+
 	int b=0;
 	int c=0;
 	int key=10;
 
-	puts("ENGG1003_Assessment 1_Rotation Decryption"); /* prints ENGG1003_Assessment 1_Rotation Encryption */
+	//puts("ENGG1003_Assessment 1_Rotation Decryption"); /* prints ENGG1003_Assessment 1_Rotation Encryption */
 
-	char textstring [1024] = "KJ WI PSBCD DOCD CDBSXQ" ;
+	char textstring [1024];	// = "KJ WI PSBCD DOCD CDBSXQ" ;
 
-	printf("%s\n", textstring);  //Print the text string.
+	rot_input_file = fopen("rotation_text.txt", "r");		//Open the file in read mode
+			fgets(textstring, 1024,(FILE*)rot_input_file);		//Read the text string from file
+			fscanf(rot_input_file, "%d", &key);					//Read the key from file
+			fclose(rot_input_file);								//Close the file
+
+			if (key <0 || key >26) {					//Check the input key is valid number range
+				//system("cls");
+				printf("\nKey value was invalid\n");	//Print to screen error message
+				return 0;							//Turn around and do it again, back to the rotation menu
+			}
+
+	printf("Text string to decrypt: %s", textstring);  //Print the text string.
+	printf("Decryption key: %d\n", key);  //Print the text string.
+
 
 	for (int a=0 ; textstring[a] != '\0' ; a++ ) // Run a loop and encrypt the string.
 	{
@@ -37,7 +53,22 @@ int rotationDecrypt (void)
 			textstring[a]=c; // Change the value of the letter
 		}
 	}
-	printf("%s\n", textstring); //Print the decrypted result
+
+	rot_output_file = fopen("rotation_text.txt", "w");	//Open the file in write mode
+	fputs(textstring, rot_output_file);						//Write the text string to file
+	fputs("\n", rot_output_file);							//Add a new line character
+	fprintf(rot_output_file, "%d", key);				//Write the manual output key value to the file
+	fclose(rot_output_file);									//Close the file
+
+	/*
+	rot_start:
+	rot_input_file = fopen("rotation_text_input.txt", "r");	//Open the file in read mode
+	fgets(textstring, 1024,(FILE*)rot_input_file);			//Read the text string from file
+	fscanf(rot_input_file, "%d", &key);						//Read the key from file
+	fclose(rot_input_file);									//Close the file
+	*/
+
+	printf("\nDecrypted text: %s\n", textstring); //Print the decrypted result
 
 	return 0;
 }
