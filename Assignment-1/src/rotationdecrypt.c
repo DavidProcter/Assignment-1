@@ -2,7 +2,7 @@
  ============================================================================
  Name        : ENGG1003_Assessment 1_Rotation Decryption.c
  Author      : David Procter
- Version     : 004
+ Version     : 005
  Copyright   : Copyright - David Procter
  Description : Rotation Decryption Function
  ============================================================================
@@ -10,6 +10,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 int rotationDecrypt (void)
 {
@@ -34,6 +35,8 @@ int rotationDecrypt (void)
 				printf("\nKey value was invalid\n");	//Print to screen error message
 				return 0;							//Turn around and do it again, back to the rotation menu
 			}
+
+	strupr(textstring);		//Make sure the text string from the file is in upper case
 
 	printf("Text string to decrypt: %s", textstring);  //Print the text string.
 	printf("Decryption key: %d\n", key);  //Print the text string.

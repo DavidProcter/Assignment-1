@@ -2,7 +2,7 @@
  ============================================================================
  Name        : ENGG1003_Assessment 1_Rotation Encryption.c
  Author      : David Procter
- Version     : 106
+ Version     : 107
  Copyright   : Copyright - David Procter
  Description : Rotation Encryption Function
  ============================================================================
@@ -10,6 +10,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 int rotationEncrypt (void)
 {
@@ -29,6 +30,8 @@ int rotationEncrypt (void)
 			printf("\nKey value was invalid\n");	//Print to screen error message
 			return 0;								//Turn around and do it again, back to the rotation menu
 		}
+
+	strupr(textstring);		//Make sure the text string from the file is in upper case
 
 	printf("Text to encrypt: %s", textstring);  //Print the text string.
 	printf("Encryption key: %d\n", key);  		//Print the key.

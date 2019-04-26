@@ -2,7 +2,7 @@
  ============================================================================
  Name        : ENGG1003_Assessment 1_Main.c
  Author      : David Procter
- Version     : 002
+ Version     : 104
  Copyright   : Copyright - David Procter
  Description : Cipher System
  ============================================================================
@@ -23,7 +23,7 @@ int main(void) {
 	FILE *sub_input_file;	//File pointer declaration
 
 	int a=0, b=0, c=0;		//Declare variables used in the menus
-	int d=0;
+	int d=0,e=0;
 	int key_input;			//Variable for collecting the rotation key value (manual input)
 	int key=0;				//Variable for the value of the rotation encryption key (file value)
 
@@ -174,7 +174,7 @@ int main(void) {
 				goto rot_go_choice;					//Go back and ask for a valid selection
 		}
 
-	puts("\nENGG1003_Assessment 1_Menu - Rotation Cipher End"); //Should not se this
+	puts("\nENGG1003_Assessment 1_Menu - Rotation Cipher End"); //Should not see this
 
 	return 0;
 
@@ -222,29 +222,59 @@ int main(void) {
 	strupr(textinput);		//Make sure the text that was input is in upper case
 	strupr(keystring_in);		//Make sure the key text that was input is in upper case
 
-	printf("Text input is: %s\n", textinput);		//Read back of entries for text string and key
+	printf("\nText input is: %s\n", textinput);		//Read back of entries for text string and key
 	printf("Key input is: %s\n\n", keystring_in);
 
-	sub_input_file = fopen("substitution_text_input.txt", "w");	//Open the file in write mode
+	sub_input_file = fopen("substitution_text.txt", "w");	//Open the file in write mode
 	fputs(textinput, sub_input_file);							//Write the text string to file
 	fputs("\n", sub_input_file);								//Add a new line character
 	fputs(keystring_in, sub_input_file);										//Write the manual input key value to the file
 	fclose(sub_input_file);										//Close the file
 
 	sub_start:
-	sub_input_file = fopen("substitution_text_input.txt", "r");	//Open the file in read mode
+	sub_input_file = fopen("substitution_text.txt", "r");	//Open the file in read mode
 	fgets(textstring, 1024,(FILE*)sub_input_file);				//Read the text string from file
 	fgets(keystring, 30,(FILE*)sub_input_file);					//Read the key string from file
 	fclose(sub_input_file);										//Close the file
 
-	strupr(textinput);		//Make sure the text string from the file is in upper case
+	strupr(textstring);		//Make sure the text string from the file is in upper case
 	strupr(keystring);		//Make sure the key string from the file is in upper case
 
 
-	printf("File text: %s\n", textstring);		//Print what was read from the file
-	printf("File key: %s\n", keystring);		//Print what was read from the file
+	printf("File text: %s", textstring);		//Print what was read from the file
+	printf("File key: %s\n\n", keystring);		//Print what was read from the file
 
-	puts("ENGG1003_Assessment 1_Menu - Substitution End"); /* prints ENGG1003_Assessment 1_Menu */
+
+	sub_go_choice:
+	printf("Please select from the choice\n");	//List the choices
+	printf("1 to Encript\n2 to Decrypt\n9 to return to Main Menu\n\n");
+	printf("Please enter selection: ");			//Ask for selection
+	scanf("%d", &e);							//Store the selection
+
+	switch (e){							//Switch case for menu selection
+		case 1:
+			printf("\nSubstitution Encryption\n");
+			substitutionEncrypt ();
+			goto sub_go_choice;
+			break;
+		case 2:
+			printf("\nSubstitution Decryption\n");
+			substitutionDecrypt ();
+			goto sub_go_choice;
+			break;
+		case 9:
+			printf("EXIT (Main Menu)");
+			system("cls");					//Return back to the main menu
+			goto menu;
+			break;
+		default:
+			//system("cls");
+			printf("\nPlease enter a value of 1,2 or 9\n\n");
+			goto sub_go_choice;					//Go back and ask for a valid selection
+	}
+
+
+	puts("ENGG1003_Assessment 1_Menu - Substitution End"); //Should not see this message.
 
 	return EXIT_SUCCESS;
 }
