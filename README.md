@@ -1,5 +1,8 @@
 # Assignment-1
 Assignment 1 for ENGG1003 S1-2019, Cipher System
 
-For ease of use, each cipher (rotation, substitution) uses the same file for input and output.
-The no key decryption also uses it's own file, see on screen instructions.
+For ease of use, each cipher (rotation, substitution) uses the same file for input and output.\n
+These can be created by doing a manual input for text and key.\n
+Files: rotation_text.txt, substitution_text.txt\n
+The no key decryption also uses it's own file, see on screen instructions.\n
+File: rotation_nokey_in_text.txt
