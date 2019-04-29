@@ -156,10 +156,10 @@ int nokeydecrypt(void) {
 
 /*	Print to screen each version of the encrypted text.
 	================================================== */
-		printf("Decrypted text (E) 1: %s\n", outputstring1); //Print the decrypted result
-		printf("Decrypted text (T) 2: %s\n", outputstring2); //Print the decrypted result
-		printf("Decrypted text (I) 3: %s\n", outputstring3); //Print the decrypted result
-		printf("Decrypted text (S) 4: %s\n", outputstring4); //Print the decrypted result
+		printf("\nDecrypted text (E) 1:\n%s\n", outputstring1); //Print the decrypted result
+		printf("\nDecrypted text (T) 2:\n%s\n", outputstring2); //Print the decrypted result
+		printf("\nDecrypted text (I) 3:\n%s\n", outputstring3); //Print the decrypted result
+		printf("\nDecrypted text (S) 4:\n%s\n", outputstring4); //Print the decrypted result
 
 /*	Get the user to choose which encryption is correct.
 	================================================== */
