@@ -18,6 +18,7 @@ int substitutionDecrypt (void)
 	FILE *sub_output_file;	//File pointer declaration
 
 	int b=0, c=0;
+	int x=0,y=0,z=0;
 
 	//puts("ENGG1003_Assessment 1_Substitution Decryption"); /* prints ENGG1003_Assessment 1_Rotation Encryption */
 
@@ -32,6 +33,26 @@ int substitutionDecrypt (void)
 	strupr(textstring);		//Make sure the text string from the file is in upper case
 	strupr(keystring);		//Make sure the key string from the file is in upper case
 
+/*	Check the key string is a valid set of upper case alphabet with no missing or double characters
+	==============================================================================================*/
+		for (x=0 ; keystring[x] != '\0' ; x++ ) // Run loop and sum the string.
+			{
+				y = y + keystring[x];
+			}
+		z=y/x;
+		/*Prints used during testing
+		printf("Keystring sum: %d\n", y);
+		printf("Keystring count: %d\n", x);
+		printf("Keystring avg: %d\n", z);*/
+		if (y==2015 && x==26 && z==77){
+			printf("Keystring is valid\n");
+		} else {
+			printf("\nKeystring is invalid\nPlease return and re-enter\n\n");
+			goto end_message_2 ;
+		}
+
+/*Run the decryption and output to screen and file
+=================================================*/
 	printf("Text string to decrypt: %s", textstring); 	//Print the text string.
 	printf("Decryption key: %s\n", keystring); 			//Print the key string.
 
@@ -59,6 +80,9 @@ int substitutionDecrypt (void)
 			fclose(sub_output_file);							//Close the file
 
 	printf("\nDecrypted text: %s\n", textstring); //Print the decrypted result.
+	return 0;
 
+	end_message_2:
+	//printf("Keystring is bad, go do it again\n");
 	return 0;
 }

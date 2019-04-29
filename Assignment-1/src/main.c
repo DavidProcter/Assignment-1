@@ -66,8 +66,10 @@ int main(void) {
 			printf("\nPlease ensure file with test to decrypt is in the working directory of this program\n");
 			printf("File name is: rotation_nokey_in_text.txt\n");
 			printf("Text string should be on the first line only.\n");
+			printf("\nHit any key to continue\n");
 			getch();
 			gets(error);
+			system("cls");
 			nokeydecrypt();
 			goto menu;
 		case 9:
