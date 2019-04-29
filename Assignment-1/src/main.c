@@ -11,11 +11,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <conio.h>
 
 int rotationEncrypt (void);
 int rotationDecrypt (void);
 int substitutionEncrypt (void);
 int substitutionDecrypt (void);
+int nokeydecrypt(void);
 
 int main(void) {
 
@@ -46,7 +48,7 @@ int main(void) {
 	printf("Author : David Procter, C3333199\n\n");
 
 	printf("Please select from the following Menu\n");						//Menu instruction
-	printf("1 for Rotation Cipher\n2 for Substitution Cipher\n9 for EXIT\n\n");	//Menu choices
+	printf("1 for Rotation Cipher\n2 for Substitution Cipher\n3 for Rotation Decryption without key\n9 for EXIT\n\n");	//Menu choices
 	printf("Please enter selection: ");	//Request selection from the user
 	scanf("%d", &a);					//Get the choice and store it.
 	system("cls");						//Clear the terminal screen
@@ -60,6 +62,14 @@ int main(void) {
 			//printf("Substitution");
 			goto sub_menu;				//Go to the substitution menu
 			break;
+		case 3:
+			printf("\nPlease ensure file with test to decrypt is in the working directory of this program\n");
+			printf("File name is: rotation_nokey_in_text.txt\n");
+			printf("Text string should be on the first line only.\n");
+			getch();
+			gets(error);
+			nokeydecrypt();
+			goto menu;
 		case 9:
 			//printf("EXIT");				//Exit when selected
 			break;
